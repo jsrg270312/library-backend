@@ -34,9 +34,10 @@ export class BooksController {
 
   @Patch(':id')
   update(
-    @Param('id', ParseIntPipe) id: number, 
-    @Body(new AtLeastOneFieldPipe()) updateBookDto: UpdateBookDto) {
-    return this.booksService.processUpdate( id, updateBookDto);
+    @Param('id', ParseIntPipe) id: number,
+    @Body(new AtLeastOneFieldPipe()) updateBookDto: UpdateBookDto,
+  ) {
+    return this.booksService.processUpdate(id, updateBookDto);
   }
 
   @Delete(':id')
